@@ -1,16 +1,3 @@
-######################################################################
-#
-#
-#           ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗
-#           ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔════╝
-#           ██████╔╝███████║███████╗███████║██████╔╝██║     
-#           ██╔══██╗██╔══██║╚════██║██╔══██║██╔══██╗██║     
-#           ██████╔╝██║  ██║███████║██║  ██║██║  ██║╚██████╗
-#           ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
-#
-#
-######################################################################
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -89,8 +76,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -129,21 +116,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
-#neofetch
+######################################################################
+#
+#
+#           ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗
+#           ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔════╝
+#           ██████╔╝███████║███████╗███████║██████╔╝██║     
+#           ██╔══██╗██╔══██║╚════██║██╔══██║██╔══██╗██║     
+#           ██████╔╝██║  ██║███████║██║  ██║██║  ██║╚██████╗
+#           ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
+#
+#
+######################################################################
 
-#printf " 
-#       /###\      /###\      /###\\
-#      /#####\    /#####\    /#####\                                        
-#     /#######\  /#######\  /#######\                                       
-#    /###############################\\
-#   /#################################\                                      
-#  /#####/   /######/\######\   \######\                                    
-# /#####/   /######/__\######\   \######\                                  
-#/#####/   /##################\   \######\                                 
-#         /#####/\######/\#####\                                         
-#       /#####/  \####/  \#####\                                       
-#       /#####/    \##/    \#####\                                     
-#      /#####/      \/      \#####\ "
+#neofetch
 
 #calender aliases
 alias jan='cal -m 01'
@@ -159,11 +145,18 @@ alias oct='cal -m 10'
 alias nov='cal -m 11'
 alias dec='cal -m 12'
 
-alias shutdown='shutdown now'
-
 #aliases for commonly used commands
+alias shutdown='shutdown now'
+alias install='sudo apt install'
+alias purge='sudo apt purge'
+alias reinstall='sudo apt reinstall'
+alias autopurge='sudo apt autopurge'
+alias autoremove='sudo apt autoremove'
+alias uname='uname -s -r -v'
 alias c='clear'
 alias h='history'
+alias htop='htop -t'
+alias df='df -h'
 
 #colours
 blk='\[\033[01;30m\]'   # Black
@@ -178,30 +171,30 @@ clr='\[\033[00m\]'      # Reset
 
 ##-----------------------------------------------------
 ## synth-shell-greeter.sh
-if [ -f /home/mehesares/.config/synth-shell/synth-shell-greeter.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/mehesares/.config/synth-shell/synth-shell-greeter.sh
-fi
+##if [ -f /home/mehesares/.config/synth-shell/synth-shell-greeter.sh ] && [ -n "$( echo $- | grep i )" ]; then
+##	source /home/mehesares/.config/synth-shell/synth-shell-greeter.sh
+##fi
 
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
-if [ -f /home/mehesares/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/mehesares/.config/synth-shell/synth-shell-prompt.sh
-fi
+#if [ -f /home/mehesares/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+#	source /home/mehesares/.config/synth-shell/synth-shell-prompt.sh
+#fi
 
 ##-----------------------------------------------------
 ## better-ls
-if [ -f /home/mehesares/.config/synth-shell/better-ls.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/mehesares/.config/synth-shell/better-ls.sh
-fi
+#if [ -f /home/mehesares/.config/synth-shell/better-ls.sh ] && [ -n "$( echo $- | grep i )" ]; then
+#	source /home/mehesares/.config/synth-shell/better-ls.sh
+#fi
 
 ##-----------------------------------------------------
 ## alias
-if [ -f /home/mehesares/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/mehesares/.config/synth-shell/alias.sh
-fi
+#if [ -f /home/mehesares/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
+#	source /home/mehesares/.config/synth-shell/alias.sh
+#fi
 
 ##-----------------------------------------------------
 ## better-history
-if [ -f /home/mehesares/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
-	source /home/mehesares/.config/synth-shell/better-history.sh
-fi
+#if [ -f /home/mehesares/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
+#	source /home/mehesares/.config/synth-shell/better-history.sh
+#fi
