@@ -121,8 +121,8 @@ fi
 #
 #           ██████╗  █████╗ ███████╗██╗  ██╗██████╗  ██████╗
 #           ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██╔════╝
-#           ██████╔╝███████║███████╗███████║██████╔╝██║     
-#           ██╔══██╗██╔══██║╚════██║██╔══██║██╔══██╗██║     
+#           ██████╔╝███████║███████╗███████║██████╔╝██║
+#           ██╔══██╗██╔══██║╚════██║██╔══██║██╔══██╗██║
 #           ██████╔╝██║  ██║███████║██║  ██║██║  ██║╚██████╗
 #           ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
 #
@@ -146,17 +146,20 @@ alias nov='cal -m 11'
 alias dec='cal -m 12'
 
 #aliases for commonly used commands
-alias shutdown='shutdown now'
+alias off='shutdown now'
 alias install='sudo apt install'
 alias purge='sudo apt purge'
 alias reinstall='sudo apt reinstall'
 alias autopurge='sudo apt autopurge'
 alias autoremove='sudo apt autoremove'
-alias uname='uname -s -r -v'
+alias uname='uname -s -r'
 alias c='clear'
 alias h='history'
 alias htop='htop -t'
 alias df='df -h'
+alias free='free -m'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
 
 #colours
 blk='\[\033[01;30m\]'   # Black
@@ -169,11 +172,50 @@ cyn='\[\033[01;36m\]'   # Cyan
 wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
 
+#confirm before overwriting
+alias mv='mv -i'
+alias rm='rm -i'
+
+#custom bash prompt
+#PS1='\[\e[0;1;3m\]~\[\e[0;1m\]$ \[\e[0m\]'
+PS1='[\u@\h \W]\$ '
+
+### ARCHIVE EXTRACTION
+# usage: ex <file>
+ex ()
+{
+  if [ -f "$1" ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   unzstd $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+### RANDOM COLOR SCRIPT ###
+# Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
+#colorscript random
+
 ##-----------------------------------------------------
-## synth-shell-greeter.sh
-##if [ -f /home/mehesares/.config/synth-shell/synth-shell-greeter.sh ] && [ -n "$( echo $- | grep i )" ]; then
-##	source /home/mehesares/.config/synth-shell/synth-shell-greeter.sh
-##fi
+##synth-shell-greeter.sh
+#if [ -f /home/mehesares/.config/synth-shell/synth-shell-greeter.sh ] && [ -n "$( echo $- | grep i )" ]; then
+#	source /home/mehesares/.config/synth-shell/synth-shell-greeter.sh
+#fi
 
 ##-----------------------------------------------------
 ## synth-shell-prompt.sh
@@ -183,18 +225,18 @@ clr='\[\033[00m\]'      # Reset
 
 ##-----------------------------------------------------
 ## better-ls
-#if [ -f /home/mehesares/.config/synth-shell/better-ls.sh ] && [ -n "$( echo $- | grep i )" ]; then
-#	source /home/mehesares/.config/synth-shell/better-ls.sh
-#fi
+if [ -f /home/mehesares/.config/synth-shell/better-ls.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source /home/mehesares/.config/synth-shell/better-ls.sh
+fi
 
 ##-----------------------------------------------------
 ## alias
-#if [ -f /home/mehesares/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
-#	source /home/mehesares/.config/synth-shell/alias.sh
-#fi
+if [ -f /home/mehesares/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source /home/mehesares/.config/synth-shell/alias.sh
+fi
 
 ##-----------------------------------------------------
 ## better-history
-#if [ -f /home/mehesares/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
-#	source /home/mehesares/.config/synth-shell/better-history.sh
-#fi
+if [ -f /home/mehesares/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
+	source /home/mehesares/.config/synth-shell/better-history.sh
+fi
