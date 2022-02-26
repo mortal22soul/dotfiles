@@ -1,0 +1,68 @@
+% use '%' for commenting
+% egrep -v '^#' .ncmpcpp/config
+### Directories ###
+ncmpcpp_directory = "/home/mehesares/.config/ncmpcpp"
+mpd_music_dir = "/home/mehesares/Music/"
+lyrics_directory  = "/home/mehesares/.config/ncmpcpp/lyrics"
+
+
+### Visualizer ###
+visualizer_in_stereo = "yes"
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "30"
+visualizer_type = "spectrum"
+visualizer_look = "◆▋"
+
+
+message_delay_time = "1"
+playlist_shorten_total_times = "yes"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+user_interface = "alternative"
+follow_now_playing_lyrics = "yes"
+locked_screen_width_part = "60"
+display_bitrate = "yes"
+external_editor = "xed"
+use_console_editor = "yes"
+
+### Colors ###
+colors_enabled = "yes"
+main_window_color = "blue"
+header_window_color = "cyan"
+volume_color = "red"
+state_line_color = "yellow"
+state_flags_color = "red"
+progressbar_color = "yellow"
+statusbar_color = "cyan"
+visualizer_color = "cyan"
+
+current_item_prefix = "$(blue)$r"
+current_item_suffix = "$/r$(end)"
+
+current_item_inactive_column_prefix = red
+current_item_inactive_column_suffix = red
+
+color1 = "white"
+color2 = "red"
+
+mpd_host = "127.0.0.1"
+mpd_port = "6601"
+mouse_list_scroll_whole_page = "yes"
+lines_scrolled = "1"
+enable_window_title = "yes"
+song_columns_list_format = "(25)[cyan]{a} (40)[]{f} (30)[red]{b} (7f)[green]{l}"
+song_library_format = {{a - t} (b)}|{f}
+
+### Progress bar ###
+progressbar_elapsed_color = "yellow"
+
+### Window ###
+song_window_title_format = "Music"
+statusbar_visibility = "no"
+header_visibility = "yes"
+titles_visibility = "yes"
