@@ -219,7 +219,6 @@ for_window [title="Stacer"] floating enable
 # Open applications on specific workspaces
 # assign [class="Zoom"] $ws1
 # assign [class="Brave-browser"] $ws2
-# assign [class="Pcmanfm"] $ws3
 
 #Window Borders
 #Use any non-zero value if you'd like to have a border
