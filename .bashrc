@@ -209,7 +209,7 @@ ex ()
 
 ### RANDOM COLOR SCRIPT ###
 # Get this script from my GitLab: gitlab.com/dwt1/shell-color-scripts
-#colorscript random
+# colorscript random
 
 ##-----------------------------------------------------
 ##synth-shell-greeter.sh
