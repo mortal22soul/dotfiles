@@ -1,10 +1,20 @@
+/** Basic config file **/
+
+//configuration {
+//  show-icons:         true;
+//  icon-theme:         "Papirus";
+//}
+
+
 /*Dracula theme based on the Purple official rofi theme*/
 
 configuration {
-    modi: "combi,windowcd,run";
-    lines: 10;
-    font: "monospace 10";
-    bw: 0;
+    modi: "combi,windowcd,run,drun";
+    eh:2;
+    columns:1;
+    lines: 7;
+    font:"RobotoMono Nerd Font 12";
+    bw: 2;
     location: 0;
     padding: 0;
     fixed-num-lines: true;
@@ -14,21 +24,21 @@ configuration {
     separator-style: "none";
     hide-scrollbar: true;
     fullscreen: false;
-    fake-transparency: false;
+    fake-transparency: true;
     scroll-method: 1;
     window-format: "[{w}] ·· {c} ··   {t}";
     click-to-exit: true;
     show-match: false;
-    color-normal: "@xbg, @xfg, @xbg, @xfg, @xbg";
-    color-urgent: "@xbg, @x1, @xbg, @x1, @xfg";
-    color-active: "@xbg, @xfg, @xbg, @xfg, @xbg";
-    color-window: "@xbg, @x1, @xfg";
+    //color-normal: "@xbg, @xfg, @xbg, @xfg, @xbg";
+    //color-urgent: "@xbg, @x1, @xbg, @x1, @xfg";
+    //color-active: "@xbg, @xfg, @xbg, @xfg, @xbg";
+    //color-window: "@xbg, @x1, @xfg";
     combi-hide-mode-prefix: false;
     display-window: "";
     display-windowcd: "";
-    display-run: "";
+    display-run: "";
     display-ssh: "";
-    display-drun: "";
+    display-drun: "";
     display-combi: "";
     kb-remove-word-back: "Control+BackSpace,Alt+d,Alt+BackSpace";
     kb-accept-entry: "Control+m,Return,KP_Enter,Alt+m";
@@ -52,25 +62,25 @@ configuration {
     me-accept-entry: "MousePrimary";
     me-accept-custom: "MouseMiddle";
 }
+
 * {
-    font: "monospace 12";
     foreground: #f8f8f2;
-    background-color: #282a36;
+    background-color: #161925;
     active-background: #6272a4;
     urgent-background: #ff5555;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: @active-background;
+    bordercolor: @background-color;
 }
 
 window {
     background-color: @background;
-    border:           1;
-    border-radius: 6;
+    border:4;
+    border-radius: 2;
     border-color: @bordercolor;
-    padding:          5;
+    padding:5;
 }
 mainbox {
     border:  0;
@@ -94,7 +104,7 @@ listview {
 }
 element {
     border:  0;
-    padding: 1px ;
+    padding: 0px ;
 }
 element.normal.normal {
     background-color: @background;
@@ -149,7 +159,7 @@ button.selected {
 inputbar {
     spacing:    0;
     text-color: @foreground;
-    padding:    1px ;
+    padding:    4px ;
 }
 case-indicator {
     spacing:    0;
@@ -168,7 +178,7 @@ inputbar {
 }
 textbox-prompt-colon {
     expand:     false;
-    str:        ":";
+    str:        " :";
     margin:     0px 0.3em 0em 0em ;
     text-color: @foreground;
 }
