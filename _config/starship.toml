@@ -12,19 +12,10 @@ disabled = true
 # success_symbol = "[➜](bold green)"  # The "success_symbol" is set to "➜" with color "bold green"
 
 # Use custom format
- format = """
- [┌───────────────────>](bold green)
- [│](bold green)$directory$rust$package
- [└─>](bold green) """
-
-[battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
-
-[[battery.display]]
-threshold = 30
-style = "bold red"
+#format = """
+#[┌───────────────────>](bold green)
+#[│](bold green)$directory$rust$package
+#[└─>](bold green) """
 
 [character]
 error_symbol = "[✖](bold red) "
@@ -36,10 +27,11 @@ format = " took [$duration]($style)"
 [directory]
 truncation_length = 5
 format = "[$path]($style)[$lock_symbol]($lock_style) "
+read_only = " "
 
 [git_branch]
 format = " [$symbol$branch]($style) "
-symbol = "🍣 "
+symbol = " "
 style = "bold yellow"
 
 [git_commit]
@@ -72,25 +64,29 @@ disabled = true
 
 [julia]
 format = "[$symbol$version]($style) "
-symbol = "ஃ "
+symbol = " "
 style = "bold green"
 
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
+symbol = " "
 threshold = 70
 style = "bold dimmed white"
 disabled = true
 
 # Disable the package module, hiding it from the prompt completely
 [package]
-disabled = true
+symbol = " "
+disabled = false
 
 [python]
 format = "[$symbol$version]($style) "
+symbol = " "
 style = "bold green"
 
 [rust]
 format = "[$symbol$version]($style) "
+symbol = " "
 style = "bold green"
 
 [time]
@@ -102,3 +98,57 @@ disabled = true
 [username]
 style_user = "bold dimmed blue"
 show_always = false
+
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
