@@ -209,7 +209,7 @@ exec_always --no-startup-id bash /home/mehesares/.config/polybar/launch.sh
 exec_always nitrogen --restore
 exec_always flameshot
 exec --no-startup-id redshift
-exec_always dwall -s forest
+exec_always dwall -s firewatch
 # exec picom
 
 # Apps Launched with <SUPER> + <KEYPAD 1-9>
