@@ -2,11 +2,11 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
 configuration {
-	modi: "combi,windowcd,run,drun";
+	modi: "combi,windowcd,run,drun,window,ssh,keys,file-browser";
 	width: 50;
 	lines: 7;
 	columns: 1;
-	font: "RobotoMono Nerd Font 12";
+	font: "Hack Nerd Font 12";
 	bw: 2;
 	location: 0;
 	padding: 0;
@@ -63,7 +63,7 @@ configuration {
 /*	color-urgent: ;*/
 /*	color-active: ;*/
 /*	color-window: ;*/
-/*	max-history-size: 25;*/
+	max-history-size: 10;
 	combi-hide-mode-prefix: false;
 /*	matching-negate-char: '-' /* unsupported */;*/
 /*	cache-dir: ;*/
@@ -78,8 +78,8 @@ configuration {
 	display-ssh: "";
 	display-drun: "";
 	display-combi: "";
-/*	display-keys: ;*/
-/*	display-file-browser: ;*/
+	display-keys: "";
+	display-file-browser: "";
 /*	kb-primary-paste: "Control+V,Shift+Insert";*/
 /*	kb-secondary-paste: "Control+v,Insert";*/
 /*	kb-clear-line: "Control+w";*/
@@ -156,7 +156,7 @@ configuration {
 
 * {
     foreground: #f8f8f2;
-    background-color: #161925;
+    background-color: #282A36;
     active-background: #6272a4;
     urgent-background: #ff5555;
     selected-background: @active-background;
@@ -195,7 +195,7 @@ listview {
 }
 element {
     border:  0;
-    padding: 12px;
+    padding: 10px;
 }
 element.normal.normal {
     background-color: @background;
@@ -248,7 +248,7 @@ button.selected {
     text-color:       @foreground;
 }
 inputbar {
-    spacing:    0;
+    spacing:    5;
     text-color: @foreground;
     padding:    4px ;
 }
@@ -262,6 +262,7 @@ entry {
 }
 prompt {
     spacing:    0;
+    padding:    0px;
     enabled: true;
     text-color: @foreground;
 }
@@ -270,7 +271,7 @@ inputbar {
 }
 textbox-prompt-colon {
     expand:     false;
-    str:        " :";
+    str:        "  :";
     margin:     0px 0.3em 0em 0em ;
     text-color: @foreground;
 }
