@@ -13,4 +13,5 @@
     mpd
     ncmpcpp
     neofetch
+    nitrogen
     starship prompt
