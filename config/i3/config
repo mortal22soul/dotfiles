@@ -197,9 +197,9 @@ bar {
 #       position top
         height 20
         colors {
-                background #161925
-                statusline #F8F8F2
-                separator  #44475A
+                background #2f3239
+                statusline #f8f8f2
+                separator  #f8f8f2
 
                 focused_workspace  #44475A #44475A #F8F8F2
                 active_workspace   #282A36 #44475A #F8F8F2
@@ -215,15 +215,17 @@ bindsym $mod+C exec code
 bindsym $mod+X exec i3lock -f -n -i ~/.config/i3/lockscreenarch.png
 bindsym $mod+R exec --no-startup-id rofi -show drun -no-lazy-grab
 bindsym Mod1+E exec thunar
+bindsym Print exec xfce4-screenshooter -f -c
 
 # autostart applications
 exec_always --no-startup-id bash /home/mehesares/.config/polybar/launch.sh
 exec_always nitrogen --restore
-exec flameshot
+exec --no-startup-id flameshot
 exec --no-startup-id redshift
 # exec_always dwall -s firewatch
 exec_always bash /home/mehesares/.screenlayout/screenres.sh
-# exec picom
+exec_always picom --experimental-backends
+exec_always --no-startup-id xfce4-clipman
 
 # Apps Launched with <SUPER> + <KEYPAD 1-9>
 # bindsym $mod+KP_End exec
@@ -276,6 +278,7 @@ smart_gaps on
 # Only enable outer gaps when there is exactly one container
 smart_gaps inverse_outer
 
+# Recommended difference between inner and outer gaps is 4 
 gaps inner 6
 gaps outer 2
 
