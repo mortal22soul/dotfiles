@@ -48,7 +48,7 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'Hack Nerd Font-10' -p 'dmenu%'"
+bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'JetBrainsMono Nerd Font-10' -p 'dmenu%'"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -218,13 +218,13 @@ bindsym Mod1+E exec thunar
 bindsym Print exec xfce4-screenshooter -f -c
 
 # autostart applications
-exec_always --no-startup-id bash /home/mehesares/.config/polybar/launch.sh
+exec_always --no-startup-id /home/mehesares/.config/polybar/launch.sh
 exec_always nitrogen --restore
 exec --no-startup-id flameshot
 exec --no-startup-id redshift
 # exec_always dwall -s firewatch
-exec_always bash /home/mehesares/.screenlayout/screenres.sh
-exec_always picom --experimental-backends
+exec_always --no-startup-id /home/mehesares/.screenlayout/screenres.sh
+# exec_always picom --experimental-backends
 exec_always --no-startup-id xfce4-clipman
 
 # Apps Launched with <SUPER> + <KEYPAD 1-9>
