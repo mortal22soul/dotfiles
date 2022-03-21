@@ -2,6 +2,7 @@
 
 ### Configs included for :
     i3
+    bspwm
     rofi
     cava
     ranger
@@ -14,4 +15,5 @@
     ncmpcpp
     neofetch
     nitrogen
+    sxhkd
     starship prompt
