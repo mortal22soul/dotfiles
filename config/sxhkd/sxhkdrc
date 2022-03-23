@@ -3,12 +3,12 @@
 #
 
 # terminal emulator
-super + Return
+super + KP_Enter
 	xfce4-terminal
 
 # program launcher
 super + @space
-	rofi -show run
+	rofi -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -19,11 +19,11 @@ super + Escape
 #
 
 # quit/restart bspwm
-super + alt + {q,r}
+super + shift + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }q
+super + q
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -119,3 +119,11 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# screenshot the whole desktop
+Print 
+	xfce4-screenshooter -f -c
+
+# lock screen
+super + x
+	i3lock -f -n -i ~/.config/i3/lockscreenarch.png
