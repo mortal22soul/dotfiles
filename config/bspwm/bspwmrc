@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
 #
 #  ██
@@ -11,6 +11,10 @@
 # ░░░░░   ░░░░░░  ░░      ░░░    ░░░ ░░░  ░░  ░░
 #
 
+###################################
+#########     Startup      ########
+###################################
+
 pgrep -x sxhkd > /dev/null || sxhkd &
 killall -q sxhkd &
 sxhkd &
@@ -22,8 +26,15 @@ flameshot &
 xfce4-clipman &
 run xfce4-power-manager &
 
+###################################
+########     Workspaces    ########
+###################################
+
 bspc monitor LVDS-1 -d I II III IV V
-bspc monitor HDMI-1 -d I II III IV V
+
+if [[ $(xrandr -q | grep "$external_monitor connected") ]]; then
+        bspc monitor HDMI-1 -d I II III IV V
+fi
 
 ###################################
 #####     Window Settings     #####
