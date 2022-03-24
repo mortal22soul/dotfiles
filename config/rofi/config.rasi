@@ -6,7 +6,7 @@ configuration {
 	width: 50;
 	lines: 7;
 	columns: 1;
-	font: "Hack Nerd Font 12";
+	font: "JetBrainsMono Nerd Font 12";
 	bw: 2;
 	location: 0;
 	padding: 0;
@@ -33,7 +33,7 @@ configuration {
 /*	sort: false;*/
 /*	sorting-method: "normal";*/
 /*	case-sensitive: false;*/
-/*	cycle: true;*/
+/*	cycle: ;*/
 /*  eh=2*/
     sidebar-mode: false;
 /*	auto-select: false;*/
@@ -53,7 +53,7 @@ configuration {
 /*	dpi: -1;*/
 /*	threads: 0;*/
 /*	scrollbar-width: 8;*/
-	scroll-method: 1;
+	scroll-method: 2;
 /*	fake-background: "screenshot";*/
 	window-format: "[{w}] ·· {c} ··   {t}";
 	click-to-exit: true;
