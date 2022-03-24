@@ -16,4 +16,5 @@
     neofetch
     nitrogen
     sxhkd
+    htop
     starship prompt
