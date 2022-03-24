@@ -6,6 +6,12 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+# Command to check session
+#   ls /usr/share/xsessions/*.desktop
+
+# Command to show list of active monitors
+#   xrandr -q | grep -w connected
+
 # Launch polybar
 external_monitor=HDMI-1
 
