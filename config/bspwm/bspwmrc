@@ -24,7 +24,7 @@ nitrogen --restore &
 nm-applet &
 flameshot &
 xfce4-clipman &
-run xfce4-power-manager &
+xfce4-power-manager &
 
 ###################################
 ########     Workspaces    ########
