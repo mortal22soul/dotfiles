@@ -26,6 +26,7 @@ flameshot &
 xfce4-clipman &
 xfce4-power-manager &
 picom --experimental-backends &
+dunst &
 
 ###################################
 ########     Workspaces    ########
@@ -33,6 +34,7 @@ picom --experimental-backends &
 
 bspc monitor LVDS-1 -d I II III IV V
 
+external_monitor=HDMI-1
 if [[ $(xrandr -q | grep "$external_monitor connected") ]]; then
         bspc monitor HDMI-1 -d I II III IV V
 fi
