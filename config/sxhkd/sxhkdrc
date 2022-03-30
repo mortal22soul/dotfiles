@@ -2,15 +2,35 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
+# Brave
+super + b
+	brave-browser
+
+# VS Code
+super + c
+	code
+
+# Terminal emulator
 super + KP_Enter
 	xfce4-terminal
 
-# program launcher
+# Rofi
 super + @space
-	rofi -show drun
+	rofi -show drun -no-lazy-grab
 
-# make sxhkd reload its configuration files:
+# Thunar
+super + e
+	thunar
+
+# Screenshot
+Print
+	xfce4-screenshooter -f -c
+
+# lock screen
+super + x
+	i3lock -f -n -i ~/.config/i3/lockscreenarch.png
+
+# reload sxhkd
 super + Escape
 	pkill -USR1 -x sxhkd
 
@@ -119,11 +139,3 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-
-# screenshot the whole desktop
-Print 
-	xfce4-screenshooter -f -c
-
-# lock screen
-super + x
-	i3lock -f -n -i ~/.config/i3/lockscreenarch.png
