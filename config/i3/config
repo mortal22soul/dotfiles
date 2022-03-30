@@ -226,6 +226,7 @@ exec --no-startup-id flameshot
 exec --no-startup-id redshift
 exec picom --experimental-backends
 exec --no-startup-id xfce4-clipman
+exec --no-startup-id notify-send "Welcome back $USER!"
 # exec_always dwall -s firewatch
 
 # Apps Launched with <SUPER> + <KEYPAD 1-9>
