@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -a -h --color=auto'
     alias dir='dir --color=auto'
     alias vdir='vdir --color=auto'
 
@@ -128,6 +128,10 @@ fi
 #
 #
 ######################################################################
+
+#set locale to UTF-8
+LANG="en_IN.utf8"
+export LANG
 
 #neofetch
 
