@@ -162,7 +162,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -198,13 +198,13 @@ bar {
 #       position top
         height 20
         colors {
-                background #2f3239
+                background #2f323900
                 statusline #f8f8f2
                 separator  #f8f8f2
 
                 focused_workspace  #44475A #44475A #F8F8F2
-                active_workspace   #282A36 #44475A #F8F8F2
-                inactive_workspace #282A36 #282A36 #BFBFBF
+                active_workspace   #282A3600 #44475A00 #F8F8F2
+                inactive_workspace #282A3600 #282A3600 #BFBFBF
                 urgent_workspace   #FF5555 #FF5555 #F8F8F2
                 binding_mode       #FF5555 #FF5555 #F8F8F2
         }
@@ -224,9 +224,12 @@ exec_always --no-startup-id nitrogen --restore
 exec --no-startup-id xfce4-power-manger
 exec --no-startup-id flameshot
 exec --no-startup-id redshift
-exec picom --experimental-backends
+exec --no-startup-id picom --experimental-backends
 exec --no-startup-id xfce4-clipman
-exec --no-startup-id notify-send "Welcome back $USER!"
+exec --no-startup-id dunst
+exec_always notify-send "Welcome back $USER!"
+
+# install dynamic-wallpaper from  https://github.com/adi1090x/dynamic-wallpaper.git
 # exec_always dwall -s firewatch
 
 # Apps Launched with <SUPER> + <KEYPAD 1-9>
@@ -260,7 +263,7 @@ for_window [class="zoom"] floating enable
 # Lockscreen
 bindsym $mod+X exec i3lock -f -n -i ~/.config/i3/lockscreenarch.png
 
-# Window Borders
+## Window Borders
 
 # Title bar text alignment
 title_align center
@@ -273,7 +276,7 @@ for_window [class=".*"] border pixel 2
 
 # class                 border  bground text    indicator child_border
 
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused          #28b3d0 #6272A4 #F8F8F2 #28b3d0   #28b3d0
 client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
