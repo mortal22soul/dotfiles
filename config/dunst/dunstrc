@@ -1,3 +1,5 @@
+# See dunst(5) for all configuration options.
+
 [global]
     ### Display ###
 
@@ -27,7 +29,13 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    geometry = "300x5-8+36"
+
+    # Position the notification in the top right corner
+    origin = top-right
+    
+    # Scale factor. It is auto-detected if value is 0.
+    scale = 0
 
     # Maximum number of notification (0 means no limit)
     notification_limit = 0
@@ -42,7 +50,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 10
+    transparency = 25
 
     # The height of the entire notification.  If the height is smaller
     # than the font height and padding combined, it will be raised
@@ -52,6 +60,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
+    # Set it equal to frame width for consistent border between notifications.
     separator_height = 2
 
     # Padding between text and separator.
@@ -73,7 +82,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = auto
 
     # Sort messages by urgency.
     sort = yes
@@ -85,9 +94,28 @@
     # section for how to disable this if necessary
     idle_threshold = 120
 
+    ### Progress bar ###
+
+    # Turn on the progess bar. It appears when a progress hint is passed with
+    # for example dunstify -h int:value:12
+    progress_bar = true
+
+    # Set the progress bar height. This includes the frame, so make sure
+    # it's at least twice as big as the frame width.
+    progress_bar_height = 10
+
+    # Set the frame width of the progress bar
+    progress_bar_frame_width = 1
+
+    # Set the minimum width for the progress bar
+    progress_bar_min_width = 150
+
+    # Set the maximum width for the progress bar
+    progress_bar_max_width = 300
+
     ### Text ###
 
-    font = JetbrainsMono Nerd Font 10
+    font = Jetbrains Mono 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -163,8 +191,16 @@
     # Align icons left/right/off
     icon_position = off
 
+    # Scale small icons up to this size, set to 0 to disable. Helpful
+    # for e.g. small files or high-dpi screens. In case of conflict,
+    # max_icon_size takes precedence over this.
+    min_icon_size = 0
+
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 32
+
+    # Padding between text and icon.
+    text_icon_padding = 0
 
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -184,7 +220,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/sensible-browser
+    browser = /usr/bin/xdg-open
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -202,21 +238,26 @@
 
     # Manage dunst's desire for talking
     # Can be one of the following values:
-    #  crit: Critical features. Dunst aborts
-    #  warn: Only non-fatal warnings
-    #  mesg: Important Messages
-    #  info: all unimportant stuff
-    # debug: all less than unimportant stuff
+    #   crit: Critical features. Dunst aborts
+    #   warn: Only non-fatal warnings
+    #   mesg: Important Messages
+    #   info: all unimportant stuff
+    #   debug: all less than unimportant stuff
     verbosity = mesg
 
     # Define the corner radius of the notification window
-    # in pixel size. If the radius is 0, you have no rounded
-    # corners.
+    # in pixel size. If the radius is 0, you have no rounded corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
     corner_radius = 0
 
-    ## Legacy
+    # Ignore the dbus closeNotification message.
+    # Useful to enforce the timeout set by dunst configuration. Without this
+    # parameter, an application may close the notification sent before the
+    # user defined timeout.
+    ignore_dbusclose = false
+
+    ## Legacy ##
 
     # Use the Xinerama extension instead of RandR for multi-monitor support.
     # This setting is provided for compatibility with older nVidia drivers that
@@ -228,7 +269,18 @@
     # layout changes.
     force_xinerama = false
 
-    ## Mouse
+    ### Wayland ###
+    
+    # These settings are Wayland-specific. They have no effect when using X11
+
+    # Uncomment this if you want to let notications appear under fullscreen
+    # applications (default: overlay)
+    # layer = top
+
+    # Set this to true to use X11 output on Wayland.
+    force_xwayland = false
+
+    ## Mouse ##
 
     # Defines action of mouse event
     # Possible values are:
@@ -258,7 +310,7 @@
     # "ctrl", "mod1" 
     # "alt", "mod2",
     # "mod3" and "mod4" (windows-key).
-    # Xev might be helpful to find names for keys.
+    # xev might be helpful to find names for keys.
 
     # Close notification.
     close = ctrl+space
@@ -280,13 +332,15 @@
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#222222"
     foreground = "#888888"
-    timeout = 2
+    frame_color = "#696969"
+    timeout = 4
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    background = "#031b2a"
+    foreground = "#f8f8f2"
+    frame_color = "#28b3d0"
     timeout = 4
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
