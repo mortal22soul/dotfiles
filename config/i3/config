@@ -108,6 +108,17 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
+#set $ws1 1  
+#set $ws2 2  
+#set $ws3 3  
+#set $ws4 4  
+#set $ws5 5  
+#set $ws6 6 漣 
+#et $ws7 7  
+#set $ws8 8  
+#set $ws9 9  
+#set $ws10 10  
+
 set $ws1 1
 set $ws2 2
 set $ws3 3
@@ -198,13 +209,13 @@ bar {
 #       position top
         height 20
         colors {
-                background #2f323900
+                background #3b387b
                 statusline #f8f8f2
                 separator  #f8f8f2
 
                 focused_workspace  #44475A #44475A #F8F8F2
-                active_workspace   #282A3600 #44475A00 #F8F8F2
-                inactive_workspace #282A3600 #282A3600 #BFBFBF
+                active_workspace   #282A36 #44475A #F8F8F2
+                inactive_workspace #282A36 #282A36 #BFBFBF
                 urgent_workspace   #FF5555 #FF5555 #F8F8F2
                 binding_mode       #FF5555 #FF5555 #F8F8F2
         }
@@ -218,16 +229,16 @@ bindsym $alt+E exec thunar
 bindsym Print exec xfce4-screenshooter -f -c
 
 # autostart applications
-exec_always --no-startup-id /home/mehesares/.screenlayout/screenres.sh
+#exec_always --no-startup-id /home/mehesares/.screenlayout/screenres.sh
 exec_always --no-startup-id /home/mehesares/.config/polybar/launch.sh
 exec_always --no-startup-id nitrogen --restore
-exec --no-startup-id xfce4-power-manger
+exec --no-startup-id xfce4-power-manger 
 exec --no-startup-id flameshot
 exec --no-startup-id redshift
 exec --no-startup-id picom --experimental-backends
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id dunst
-exec_always notify-send "Welcome back $USER!"
+exec notify-send "Welcome back $USER!"
 
 # install dynamic-wallpaper from  https://github.com/adi1090x/dynamic-wallpaper.git
 #exec_always dwall -s firewatch
@@ -261,7 +272,7 @@ for_window [class="zoom"] floating enable
 #assign [class="Brave-browser"] $ws2
 
 # Lockscreen
-bindsym $mod+X exec i3lock -f -n -i ~/.config/i3/lockscreenarch.png
+bindsym $mod+X exec i3lock -f -n -i ~/.config/i3/base.png
 
 ## Window Borders
 
