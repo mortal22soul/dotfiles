@@ -39,5 +39,5 @@
 ## My Desktop :
 
 <p align=center>
-  <img src="desktop.png" alt="">
+  <img src="sample/desktop1.png" alt="">
 </p>
