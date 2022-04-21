@@ -1,11 +1,15 @@
 Xft.dpi: 96
-URxvt.font: xft:Monospace:size=12
-URxvt.boldFont: xft:Monospace:size=12
+URxvt.geometry: 90x30
+URxvt.font: xft:Ubuntu Mono:size=14
+URxvt.boldFont: xft:Ubuntu Mono:size=14
 URxvt.scrollBar: false
+URxvt.title: URxvt
+URxvt.cursorBlink: True
+URxvt.cursorUnderline: False
 
 ! special
 *.background:   #282A36
-*.foreground:   #f8f8f2
+*.foreground:   #ffffff
 *.cursorColor:  #f8f8f2
 
 ! black
