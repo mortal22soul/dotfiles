@@ -232,7 +232,7 @@ bindsym Print exec xfce4-screenshooter -f -c
 #exec_always --no-startup-id /home/mehesares/.screenlayout/screenres.sh
 exec_always --no-startup-id /home/mehesares/.config/polybar/launch.sh
 exec_always --no-startup-id nitrogen --restore
-exec --no-startup-id xfce4-power-manger 
+exec --no-startup-id xfce4-power-manager 
 exec --no-startup-id flameshot
 exec --no-startup-id redshift
 exec --no-startup-id picom --experimental-backends
