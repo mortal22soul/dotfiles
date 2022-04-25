@@ -66,13 +66,11 @@ bspc config right_monocle_padding       0
 bspc config left_monocle_padding        0
 bspc config bottom_monocle_padding      0
 
-#bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
-
 bspc config pointer_follows_monitor     true
 bspc config focus_follows_pointer       true
-bspc config click_to_focus              true
-bspc config focus_by_distance           true
-bspc config history_aware_focus         true
+#bspc config click_to_focus              true
+#bspc config focus_by_distance           true
+#bspc config history_aware_focus         true
 
 bspc config split_ratio                 0.50
 bspc config borderless_monocle          true
