@@ -4,7 +4,7 @@
 
 # Brave
 super + b
-	brave-browser
+	brave-browser-stable
 
 # VS Code
 super + c
@@ -15,7 +15,7 @@ super + KP_Enter
 	xfce4-terminal
 
 # Rofi
-super + @space
+super + r
 	rofi -show drun -no-lazy-grab
 
 # Thunar
@@ -24,15 +24,27 @@ super + e
 
 # Screenshot
 Print
-	xfce4-screenshooter -f -c
+	flameshot full -p /home/mehesares/Pictures/screenshots
 
 # lock screen
 super + x
-	i3lock -f -n -i ~/.config/i3/lockscreenarch.png
+	#i3lock -f -n -i ~/.config/i3/base.png
+	/home/mehesares/lock.sh
 
 # reload sxhkd
 super + Escape
 	pkill -USR1 -x sxhkd
+
+#
+# volume control
+#
+
+XF86AudioLowerVolume
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioRaiseVolume
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #
 # bspwm hotkeys
