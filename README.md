@@ -40,4 +40,5 @@
 
 <p align=center>
   <img src="sample/desktop1.png" alt="">
+  <img src="sample/desktop2.png" alt="">
 </p>
