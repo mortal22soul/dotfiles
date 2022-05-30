@@ -1,5 +1,7 @@
 # ~/.config/starship.toml
 
+format = "$all"
+
 # Don't print a new line at the start of the prompt
 add_newline = false
 
@@ -8,8 +10,6 @@ add_newline = false
 disabled = true
 
 # Replace the "❯" symbol in the prompt with "➜"
-# [character]                         # The name of the module we are configuring is "character"
-# success_symbol = "[➜](bold green)"  # The "success_symbol" is set to "➜" with color "bold green"
 
 # Use custom format
 #format = """
@@ -17,17 +17,49 @@ disabled = true
 #[│](bold green)$directory$rust$package
 #[└─>](bold green) """
 
-[character]
-error_symbol = "[✖](bold red) "
+[character]     # The name of the module we are configuring is "character"
+
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+vicmd_symbol = "[](bold yellow)"
+format = "$symbol (bold bright-black)"
+
+#success_symbol = "[➜](bold green)"
+#error_symbol = "[✖](bold red)"
 
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (=10 sec)
 format = " took [$duration]($style)"
 
 [directory]
+disabled=false
 truncation_length = 5
 format = "[$path]($style)[$lock_symbol]($lock_style) "
 read_only = " "
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+symbol = " "
+threshold = 70
+style = "bold dimmed white"
+disabled = true
+
+[time]
+time_format = "%H:%M"
+format = "$time($style) "
+style = "cyan"
+disabled = true
+
+[username]
+style_user = "cyan"
+show_always = false
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+trim_at = "-"
+style = "bold dimmed white"
+disabled = true
 
 [git_branch]
 format = " [$symbol$branch]($style) "
@@ -55,25 +87,6 @@ deleted = "🗑️  ×${count}"
 style = "bright-white"
 format = "$all_status$ahead_behind"
 
-[hostname]
-ssh_only = false
-format = "<[$hostname]($style)>"
-trim_at = "-"
-style = "bold dimmed white"
-disabled = true
-
-[julia]
-format = "[$symbol$version]($style) "
-symbol = " "
-style = "bold green"
-
-[memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
-symbol = " "
-threshold = 70
-style = "bold dimmed white"
-disabled = true
-
 # Disable the package module, hiding it from the prompt completely
 [package]
 symbol = " "
@@ -89,15 +102,10 @@ format = "[$symbol$version]($style) "
 symbol = " "
 style = "bold green"
 
-[time]
-time_format = "%T"
-format = "🕙 $time($style) "
-style = "bright-white"
-disabled = true
-
-[username]
-style_user = "bold dimmed blue"
-show_always = false
+[julia]
+format = "[$symbol$version]($style) "
+symbol = " "
+style = "bold green"
 
 [aws]
 symbol = "  "
@@ -152,3 +160,6 @@ symbol = " "
 
 [swift]
 symbol = "ﯣ "
+
+[lua]
+symbol = "[](blue) "
