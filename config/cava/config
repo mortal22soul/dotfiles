@@ -1,6 +1,5 @@
 ## Configuration file for CAVA. Default values are commented out. Use either ';' or '#' for commenting.
 
-
 [general]
 
 # Smoothing mode. Can be 'normal', 'scientific' or 'waves'. DEPRECATED as of 0.6.0
@@ -21,7 +20,7 @@
 
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-  bars = 25
+  bars = auto
 ; bar_width = 2
 ; bar_spacing = 1
 
@@ -117,8 +116,8 @@
 # sdl window size and position. -1,-1 is centered.
 ; sdl_width = 1000
 ; sdl_height = 500
-; sdl_x = -1
-; sdl_y= -1
+ sdl_x = -1
+ sdl_y= -1
 
 [color]
 
@@ -140,15 +139,23 @@
 # You can define as many as 8 different colors. They range from bottom to top of screen
  gradient = 1
  gradient_count = 8
- gradient_color_1 = '#59cc33'
- gradient_color_2 = '#80cc33'
- gradient_color_3 = '#a6cc33'
- gradient_color_4 = '#cccc33'
- gradient_color_5 = '#cca633'
- gradient_color_6 = '#cc8033'
- gradient_color_7 = '#cc5933'
- gradient_color_8 = '#cc3333'
+# gradient_color_1 = '#59cc33'
+# gradient_color_2 = '#80cc33'
+# gradient_color_3 = '#a6cc33'
+# gradient_color_4 = '#cccc33'
+# gradient_color_5 = '#cca633'
+# gradient_color_6 = '#cc8033'
+# gradient_color_7 = '#cc5933'
+# gradient_color_8 = '#cc3333'
 
+ gradient_color_1 = '#B5E8E0'
+ gradient_color_2 = '#89DCEB'
+ gradient_color_3 = '#96CDFB'
+ gradient_color_4 = '#DDB6F2'
+ gradient_color_5 = '#F5C2E7'
+ gradient_color_6 = '#E8A2AF'
+ gradient_color_7 = '#F2CDCD'
+ gradient_color_8 = '#F5E0DC'
 
 
 [smoothing]
