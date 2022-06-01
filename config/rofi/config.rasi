@@ -2,7 +2,8 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
 configuration {
-	modi: "combi,windowcd,run,drun,window,ssh,keys,file-browser";
+	/* modi: "combi,windowcd,run,drun,window,ssh,keys,file-browser"; */
+	modi: "run,drun";
 	width: 50;
 	lines: 7;
 	columns: 1;
