@@ -28,8 +28,7 @@ Print
 
 # lock screen
 super + x
-	#i3lock -f -n -i ~/.config/i3/base.png
-	/home/mehesares/lock.sh
+	$HOME/lock.sh
 
 # reload sxhkd
 super + Escape
@@ -56,7 +55,7 @@ super + shift + {q,r}
 
 # close and kill
 super + q
-	bspc node -{c,k}
+	bspc node -{c}
 
 # alternate between the tiled and monocle layout
 super + m
@@ -77,6 +76,14 @@ super + g
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# instantly toggle between tiled and floating layouts
+super + shift + space
+    if [ -z "$(bspc query -N -n focused.floating)" ]; then \                    
+        bspc node focused -t floating; \                                        
+    else \                                                                      
+        bspc node focused -t tiled; \                                           
+    fi
 
 # set the node flags
 super + ctrl + {m,x,y,z}
