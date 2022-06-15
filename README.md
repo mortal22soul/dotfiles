@@ -7,7 +7,6 @@
   - bspwm - https://github.com/baskerville/bspwm
   - sxhkd - https://github.com/baskerville/sxhkd
   - rofi - https://github.com/davatorium/rofi
-    - rofi themes - https://github.com/adi1090x/rofi 
   - cava - https://github.com/karlstav/cava
   - vis - https://github.com/dpayne/cli-visualizer
   - ranger - https://github.com/ranger/ranger
@@ -21,7 +20,6 @@
   - dunst - https://github.com/dunst-project/dunst
   - ncmpcpp - https://github.com/ncmpcpp/ncmpcpp
   - mpd
-  - htop
 
 ### Fonts :
 
@@ -36,9 +34,14 @@
    - Nerd Fonts - https://www.nerdfonts.com/
      - Cheat Sheet - https://www.nerdfonts.com/cheat-sheet
 
-## My Desktop :
+## My Desktops :
 
-<p align=center>
-  <img src="sample/desktop1.png" alt="">
+  ### bspwm :
+  
+  <img src="sample/bspwm-catppuccin.png" alt="">
+  
+  ### xfce :
+  <img src="sample/spidey-xfce.png" alt="">
+  
+  ### i3 :
   <img src="sample/desktop2.png" alt="">
-</p>
