@@ -1,0 +1,1000 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+primary = ${xrdb:color6}
+secondary = ${xrdb:color5}
+alert = ${xrdb:color8}
+
+deco=#363a4f
+
+; Active Shade 
+shade0 = ${xrdb:color0}
+shade1 = ${xrdb:color1}
+shade2 = ${xrdb:color2}
+shade3 = ${xrdb:color3}
+shade4 = ${xrdb:color4}
+shade5 = ${xrdb:color5}
+shade6 = ${xrdb:color6}
+shade7 = ${xrdb:color7}
+shade8 = ${xrdb:color8}
+shade9 = ${xrdb:color9}
+shade10 = ${xrdb:color10}
+shade11 = ${xrdb:color11}
+shade12 = ${xrdb:color12}
+shade13 = ${xrdb:color13}
+shade14 = ${xrdb:color14}
+shade15 = ${xrdb:color15}
+shade16 = ${xrdb:color0}
+shade17 = ${xrdb:color0}
+shade18 = ${xrdb:color0}
+
+[bar/bar]
+width = 99%
+height = 22
+offset-x = 6
+offset-y = 6
+radius = 12.0
+fixed-center = false
+bottom = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 0
+underline-size = 1
+line-color = ${colors.background}
+
+border-size = 4pt
+border-color = ${colors.background}
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Fira Code:style=Regular:size=10;2
+font-1 = Font Awesome 5 Brands:size=10;2
+font-2 = Font Awesome 5 Free Solid:size=10;2
+font-3 = FiraCode Nerd Font Mono:style=Regular:size=14;2 
+font-4 = Font Awesome 5 Free Solid:size=10;2
+font-5 = Noto Color Emoji:scale=10;2
+
+modules-left = left powermenu right sep left workspaces right
+modules-center = left time right
+modules-right = left pulseaudio right sep left backlight right sep left eth wlan right sep left cpu right sep left memory right
+
+override-redirect = true
+wm-restack = bspwm
+
+scroll-up = 
+scroll-down = 
+
+cursor-click = pointer
+
+enable-ipc = true
+pseudo-transparency = true
+
+# Tray Settings
+tray-position = none
+tray-padding = 5
+tray-background = ${colors.deco}
+tray-maxsize = 26
+tray-detached = false
+
+
+#####################################################################
+#
+#                               MODULES
+#
+#####################################################################
+
+[module/gaps]
+type = custom/text
+content-foreground = #000000ff
+content-background = #000000ff
+content-underline = #000000ff
+content-overline = #000000ff
+content = " "
+
+[module/sep]
+type = custom/text
+content-foreground = ${colors.background}
+content-background = ${colors.background}
+content-underline = ${colors.background}
+content-overline = ${colors.background}
+content = " "
+
+[module/void]
+type = custom/text
+content-foreground = ${colors.deco}
+content-background = ${colors.deco}
+content-underline = ${colors.background}
+content-overline = ${colors.background}
+content = " "
+
+[module/left]
+type = custom/text
+content-foreground = ${colors.deco}
+content-background = ${colors.background}
+content-overline = ${colors.background}
+content-underline = ${colors.background}
+content = ""
+
+[module/right]
+type = custom/text
+content-foreground = ${colors.deco}
+content-background = ${colors.background}
+content-overline = ${colors.background}
+content-underline = ${colors.background}
+content = ""
+
+[module/tray]
+type = custom/script
+tail = true
+exec = ~/tray_width.sh
+format-background = ${colors.deco}
+
+[module/workspaces]
+type = internal/xworkspaces
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; Create click handler used to focus desktop
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle desktops
+; Default: true
+enable-scroll = true
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = true
+
+; icon-[0-9]+ = <desktop-name>;<icon>
+; NOTE: The desktop name needs to match the name configured by the WM
+; You can get a list of the defined desktops using:
+; $ xprop -root _NET_DESKTOP_NAMES
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-default = 
+
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
+; Default: <label-state>
+format = <label-state>
+format-background = ${colors.deco}
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-monitor = %name%
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-active = 
+label-active-foreground = ${colors.foreground}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-occupied = 
+label-occupied-foreground = ${colors.foreground}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = 
+label-urgent-foreground = ${colors.foreground}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-empty = ﱤ
+label-empty-foreground = ${colors.foreground}
+
+label-active-padding = 1
+label-urgent-padding = 1
+label-occupied-padding = 1
+label-empty-padding = 1
+
+label-monitor-underline = ${colors.background}
+label-active-underline = ${colors.background}
+label-occupied-underline = ${colors.background}
+label-urgent-underline = ${colors.background}
+label-empty-underline = ${colors.background}
+
+label-monitor-overline = ${colors.background}
+label-active-overline = ${colors.background}
+label-occupied-overline = ${colors.background}
+label-urgent-overline = ${colors.background}
+label-empty-overline = ${colors.background}
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/bspwm]
+type = internal/bspwm
+
+format = <label-state>
+pin-workspaces = false
+enable-scroll = true
+label-separator = "  "
+label-separator-background = ${colors.deco}
+
+label-focused-overline = ${colors.background}
+label-occupied-overline = ${colors.background}
+label-urgent-overline = ${colors.background}
+label-empty-overline = ${colors.background}
+label-separator-overline = ${colors.background}
+label-separator-underline = ${colors.background}
+
+label-focused-underline = ${colors.background}
+label-occupied-underline = ${colors.background}
+label-urgent-underline = ${colors.background}
+label-empty-underline = ${colors.background}
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+
+label-focused = %icon%
+;label-focused-padding = 1
+label-focused-foreground = ${colors.shade3}
+label-focused-background = ${colors.deco}
+
+label-occupied = %icon%
+;label-occupied-padding = 1
+label-occupied-background = ${colors.deco}
+label-occupied-foreground = ${colors.shade7}
+
+label-urgent = %icon%
+;label-urgent-padding = 1
+label-urgent-background = ${colors.deco}
+label-urgent-foreground = ${colors.shade1}
+
+label-empty = %icon%
+;label-empty-padding = 1
+label-empty-background = ${colors.deco}
+label-empty-foreground = ${colors.shade4}
+
+[module/bsplayout]
+type = internal/bspwm
+
+format = <label-mode>
+pin-workspace = false
+enable-scroll = false
+inline-mode = false
+
+label-monocle-overline = ${colors.background}
+label-tiled-overline = ${colors.background}
+label-monocle-underline = ${colors.background}
+label-tiled-underline = ${colors.background}
+
+;format-suffix = %{Fcolors.shade7}|%{F-}
+format-background = ${colors.deco}
+format-foreground = ${colors.shade1}
+;format-padding = 1
+
+; The following labels will be used to indicate the layout/mode
+; for the focused workspace. Requires <label-mode>
+;
+; Available tokens:
+;   None
+label-monocle = 
+;label-monocle-padding = 1
+label-tiled = 
+;label-tiled-padding = 1
+
+[module/bspmode]
+type = internal/bspwm
+
+format = <label-mode>
+pin-workspace = false
+enable-scroll = false
+inline-mode = false
+
+;format-suffix = %{Fcolors.shade7}|%{F-}
+format-background = ${colors.deco}
+format-foreground = ${colors.shade1}
+;format-padding = 1
+
+
+label-fullscreen-overline = ${colors.background}
+label-floating-overline = ${colors.background}
+label-pseudotiled-overline = ${colors.background}
+label-locked-overline = ${colors.background}
+label-sticky-overline = ${colors.background}
+label-private-overline = ${colors.background}
+label-marked-overline = ${colors.background}
+
+label-fullscreen-underline = ${colors.background}
+label-floating-underline = ${colors.background}
+label-pseudotiled-underline = ${colors.background}
+label-locked-underline = ${colors.background}
+label-sticky-underline = ${colors.background}
+label-private-unerline = ${colors.background}
+label-marked-underline = ${colors.background}
+
+label-fullscreen = 
+label-fullscreen-padding-left = 1
+label-floating = 
+label-floating-padding-left = 1
+label-pseudotiled = 
+label-pseudotiled-padding-left = 1
+label-locked = 
+label-locked-padding-left = 1
+label-sticky = 
+label-sticky-padding-left = 1
+label-private = 
+label-private-padding-left = 1
+label-marked = 
+label-marked-padding-left = 1
+
+[module/launcher]
+type = custom/text
+content-background = ${colors.background}
+content-foreground = ${colors.shade4}
+content-padding = 1
+click-left = "rofi -show drun"
+content = ""
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 50
+label-empty = Desktop
+
+format = <label>
+format-prefix = ""
+format-prefix-foreground = ${colors.shade14}
+format-foreground = ${colors.shade14}
+;format-background = ${colors.deco}
+format-overline = ${colors.background}
+format-underline = ${colors.background}
+
+[module/bluetooth]
+type = custom/script
+;exec = ~/.config/polybar/polybar-scripts/bluetooth.sh
+tail = true
+;click-left = ~/.config/polybar/polybar-scripts/bluetooth.sh --toggle &
+format-foreground = ${colors.shade5}
+format-background = ${colors.deco}
+format-overline = ${colors.background}
+format-underline = ${colors.background}
+
+[module/dunst]
+type = custom/ipc
+initial = 1
+format-foreground = ${colors.shade3}
+format-background = ${colors.deco}
+format-overline = ${colors.background}
+format-underline = ${colors.background}
+format-padding = 1
+
+hook-0 = echo "%{A1:notify-send "DUNST_COMMAND_PAUSE" && polybar-msg hook dunst 2:}  %{A}" &
+hook-1 = echo "%{A1:notify-send "DUNST_COMMAND_RESUME" && polybar-msg hook dunst 1:}  %{A}" &
+
+click-middle = rofi_notif_center.sh &
+
+[module/redshift]
+type = custom/script
+exec = $HOME/.config/polybar/polybar-scripts/redshift.sh
+interval = 5
+
+format-background = ${colors.deco}
+format-overline = ${colors.background}
+format-underline = ${colors.background}
+
+click-left = ~/.config/qtile/toggle_redshift.sh
+;exec = source ~/.config/polybar/polybar-scripts/env.sh && ~/.config/polybar/polybar-scripts/redshift_scroll.sh temperature 
+;click-left = source ~/.config/polybar/polybar-scripts/env.sh && ~/.config/polybar/polybar-scripts/redshift_scroll.sh toggle 
+;scroll-up = source ~/.config/polybar/polybar-scripts/env.sh && ~/.config/polybar/polybar-scripts/redshift_scroll.sh increase
+;scroll-down = source ~/.config/polybar/polybar-scripts/env.sh && ~/.config/polybar/polybar-scripts/redshift_scroll.sh decrease
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume><label-volume>
+format-volume-background = ${colors.deco}
+;label-volume-padding-left = 1
+label-volume = %percentage%%
+label-volume-foreground = ${colors.shade6}
+label-volume-background = ${colors.deco}
+
+format-volume-overline = ${colors.background}
+format-muted-overline = ${colors.background}
+format-volume-underline = ${colors.background}
+format-muted-underline = ${colors.background}
+
+label-volume-overline = ${colors.background}
+label-muted-overline = ${colors.background}
+label-volume-underline = ${colors.background}
+label-muted-underline = ${colors.background}
+
+label-muted =  Muted
+label-muted-background = ${colors.deco}
+label-muted-foreground = ${colors.shade6}
+;label-muted-padding = 1
+
+click-right = pavucontrol
+
+bar-volume-format = %{T8}%fill%%indicator%%empty%%{T-}
+bar-volume-width = 10
+
+bar-volume-gradient = false
+bar-volume-foreground-0 = ${colors.shade6}
+bar-volume-empty-foreground = ${colors.shade8}
+bar-volume-indicator-foreground = ${colors.shade6}
+; The fill, indicator and empty icon can be configured like any <label>
+bar-volume-fill = 
+bar-volume-empty = 
+bar-volume-indicator = 雷
+
+bar-volume-fill-background = ${colors.deco}
+bar-volume-indicator-background = ${colors.deco}
+bar-volume-empty-background = ${colors.deco}
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.shade6}
+ramp-volume-background = ${colors.deco}
+ramp-volume-padding-right = 1
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ACAD
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
+; Available tags:
+;   <label-charging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-charging>
+format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.shade3}
+format-charging-background = ${colors.deco}
+format-charging-padding-right = 5
+format-charging-overline = ${colors.background}
+format-charging-underline = ${colors.background}
+
+format-full = <label-full>
+format-full-background = ${colors.deco}
+format-full-overline = ${colors.background}
+format-full-underline = ${colors.background}
+
+; Available tags:
+;   <label-discharging> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;   <animation-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${colors.shade3}
+format-discharging-background = ${colors.deco}
+format-discharging-padding-right = 5
+format-discharging-overline = ${colors.background}
+format-discharging-underline = ${colors.background}
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+;format-full = <ramp-capacity> <label-full>
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current charge rate in watts)
+label-charging =  %percentage%% 
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+;   %time%
+;   %consumption% (shows current discharge rate in watts)
+label-discharging = %percentage%% 
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw%
+label-full =  %percentage%%
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+[module/backlight]
+type = internal/backlight
+
+; Use the following command to list available cards:
+; $ ls -1 /sys/class/backlight/
+card = acpi_video0
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format = <ramp><label>
+;format = %{T8}<bar>%{T-}
+
+label-background = ${colors.deco}
+label-foreground = ${colors.shade3}
+label-overline = ${colors.background}
+label-underline = ${colors.background}
+
+; Only applies if <ramp> is used
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-7 = 
+ramp-8 = 
+ramp-9 = 
+ramp-foreground = ${colors.shade3}
+ramp-background = ${colors.deco}
+ramp-overline = ${colors.background}
+ramp-underline = ${colors.background}
+ramp-padding-right = 1 
+ramp-padding-left = 
+
+; Use the `/sys/class/backlight/.../actual-brightness` file
+; rather than the regular `brightness` file.
+; Defaults to true unless the specified card is an amdgpu backlight.
+; New in version 3.6.0
+use-actual-brightness = true
+
+; Available tokens:
+;   %percentage% (default)
+label = %percentage:2%%
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = 雷
+bar-fill = 
+bar-empty = 
+
+bar-format = %{T8}%fill%%indicator%%empty%%{T-}
+bar-foreground-0 = ${colors.shade3}
+bar-empty-foreground = ${colors.shade8}
+bar-indicator-foreground = ${colors.shade3}
+bar-fill-background = ${colors.deco}
+bar-indicator-background = ${colors.deco}
+bar-empty-background = ${colors.deco}
+bar-fill-overline = ${colors.background}
+bar-fill-underline = ${colors.background}
+bar-indicator-overline = ${colors.background}
+bar-indicator-underline = ${colors.background}
+bar-empty-overline = ${colors.background}
+bar-empty-underline = ${colors.background}
+
+[module/eth]
+type = internal/network
+interface = enp7s0
+interval = 2.0
+
+;format-connected-underline = ${xrdb:color2}
+format-connected-prefix = " "
+format-connected-background = ${colors.deco}
+;format-connected-padding = 1
+format-connected-prefix-foreground = ${colors.shade5}
+label-connected = %{A1:setsid -f connman-gtk:}ETH%{A}
+
+label-connected-overline = ${colors.background}
+label-disconnected-overline = ${colors.background}
+label-connected-underline = ${colors.background}
+label-disconnected-underline = ${colors.background}
+
+format-connected-overline = ${colors.background}
+format-disconnected-overline = ${colors.background}
+format-connected-underline = ${colors.background}
+format-disconnected-underline = ${colors.background}
+
+;format-disconnected = Disconnected
+;format-disconnected-background = ${colors.deco}
+
+[module/wlan]
+type = internal/network
+interface = wlp4s0
+interval = 2.0
+
+format-connected-background = ${colors.deco}
+format-connected = <ramp-signal> <label-connected>
+format-connected-padding-left = 1
+label-connected = %{A1:setsid -f connman-gtk:}%essid%%{A}
+label-connected-foreground = ${colors.shade13}
+
+label-connected-overline = ${colors.background}
+label-disconnected-overline = ${colors.background}
+label-connected-underline = ${colors.background}
+label-disconnected-underline = ${colors.background}
+
+format-connected-overline = ${colors.background}
+format-disconnected-overline = ${colors.background}
+format-connected-underline = ${colors.background}
+format-disconnected-underline = ${colors.background}
+
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${colors.deco}
+format-disconnected-padding = 1
+label-disconnected = 睊 Disconnected
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.shade13}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = %a, %b %d
+
+format = <label>
+format-padding = 1
+
+format-prefix = "" 
+format-prefix-foreground = ${colors.shade18}
+format-foreground = ${colors.shade18}
+format-background = ${colors.deco}
+
+format-overline = ${colors.background}
+format-underline = ${colors.background}
+
+;label = %date%
+label = %{A1:~/.config/polybar/polybar-scripts/cal-popup.sh --popup &:}%date%%{A}
+
+[module/time]
+type = internal/date
+interval = 5
+time = "%I:%M %p"
+time-alt = "%A, %B %d %Y"
+format = <label>
+format-background = ${colors.deco}
+format-prefix-foreground = ${colors.shade2}
+format-foreground = ${colors.shade2}
+format-prefix = " "
+;format-padding = 1
+
+format-overline = ${colors.background}
+format-underline = ${colors.background}
+
+label = %time%
+;label = %{A1:notify-send -a Date -i /usr/share/icons/Nord-Icon/64x64/apps/office-calendar.svg -u normal -t 3000 "$(date "+%A, %B %d %Y")":}%time%%{A}
+;label = %{A1:~/.config/polybar/polybar-scripts/cal-popup.sh --popup &:}%time%%{A}
+;click-left = "~/.config/polybar/polybar-scripts/cal-popup.sh --popup &"
+
+[module/powermenu]
+type = custom/text
+content-background = ${colors.deco}
+content-foreground = ${colors.shade4}
+content-underline = ${colors.background}
+content-overline = ${colors.background}
+content-padding = 0
+click-left = "$HOME/.config/rofi/power.sh"
+content = "⏻"
+
+[module/memory]
+type = internal/memory
+
+; Seconds to sleep between updates
+interval = 2
+
+; Available tags:
+;   <label> (default)
+;   <bar-used>
+;   <bar-free>
+;   <ramp-used>
+;   <ramp-free>
+;   <bar-swap-used>
+;   <bar-swap-free>
+;   <ramp-swap-used>
+;   <ramp-swap-free>
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.shade12}
+format-foreground = ${colors.shade12}
+format-background = ${colors.deco}
+format-underline = ${colors.background}
+format-overline = ${colors.background}
+
+; Available tokens:
+;   %percentage_used% (default)
+;   %percentage_free%
+;   %gb_used%
+;   %gb_free%
+;   %gb_total%
+;   %mb_used%
+;   %mb_free%
+;   %mb_total%
+;   %percentage_swap_used%
+;   %percentage_swap_free%
+;   %mb_swap_total%
+;   %mb_swap_free%
+;   %mb_swap_used%
+;   %gb_swap_total%
+;   %gb_swap_free%
+;   %gb_swap_used%
+
+label = " %percentage_used%%"
+
+; Only applies if <ramp-used> is used
+;;ramp-used-0 = ${memory.used0}
+;;ramp-used-1 = ${memory.used1}
+;;ramp-used-2 = ${memory.used2}
+
+; Only applies if <ramp-free> is used
+;;ramp-free-0 = ${memory.free0}
+;;ramp-free-1 = ${memory.free1}
+;;ramp-free-2 = ${memory.free2}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+;format = <label> <ramp-coreload>
+format =   <label>
+format-foreground = ${colors.shade10}
+format-underline = ${colors.background}
+format-background = ${colors.deco}
+format-overline = ${colors.background}
+label = %percentage:2%%
+label-foreground = ${colors.shade10}
+
+; Spacing between individual per-core ramps
+;ramp-coreload-spacing = 0
+;ramp-coreload-0 = ▁
+;ramp-coreload-1 = ▂
+;ramp-coreload-2 = ▃
+;ramp-coreload-3 = ▄
+;ramp-coreload-4 = ▅
+;ramp-coreload-5 = ▆
+;ramp-coreload-6 = ▇
+;ramp-coreload-7 = █
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/mpd]
+type = internal/mpd
+
+; Host where mpd is running (either ip or domain name)
+; Can also be the full path to a unix socket where mpd is running.
+host = 127.0.0.1
+port = 6601
+
+; Seconds to sleep between progressbar/song timer sync
+interval = 1
+
+; Available tags:
+;   <label-song> (default)
+;   <label-time>
+;   <bar-progress>
+;   <toggle> - gets replaced with <icon-(pause|play)>
+;   <toggle-stop> - gets replaced with <icon-(stop|play)>
+;   <icon-random>
+;   <icon-repeat>
+;   <icon-repeatone> (deprecated)
+;   <icon-single> - Toggle playing only a single song. Replaces <icon-repeatone>
+;   <icon-consume>
+;   <icon-prev>
+;   <icon-stop>
+;   <icon-play>
+;   <icon-pause>
+;   <icon-next>
+;   <icon-seekb>
+;   <icon-seekf>
+format-online = <label-time> <icon-prev> <toggle> <icon-next> <label-song>
+underline-format-online = ${colors.primary}
+format-playing = ${self.format-online}
+format-playing-underline = ${colors.primary}
+format-paused = ${self.format-online}
+format-paused-underline = ${colors.primary}
+format-stopped = ${self.format-online}
+format-stopped-underline = ${colors.primary}
+
+; Available tags:
+;   <label-offline>
+format-offline = <label-offline>
+format-offline-underline = ${colors.primary}
+format-offline-prefix = " ﱙ "
+format-offline-prefix-foreground = ${colors.primary}
+label-offline = " "
+
+; Available tokens:
+;   %artist%
+;   %album-artist%
+;   %album%
+;   %date%
+;   %title%
+; Default: %artist% - %title%
+label-song = 𝄞 %artist% - %title%
+
+; Available tokens:
+;   %elapsed%
+;   %total%
+; Default: %elapsed% / %total%
+label-time = %elapsed% / %total%
+
+; Only applies if <icon-X> is used
+icon-play = 契
+icon-play-foreground = ${colors.primary}
+icon-play-padding = 1
+icon-pause = 
+icon-pause-padding = 1
+icon-pause-foreground = ${colors.primary}
+icon-stop = 栗
+icon-stop-foreground = ${colors.primary}
+icon-next = 怜
+icon-next-foreground = ${colors.primary}
+icon-prev = 玲
+icon-prev-foreground = ${colors.primary}
+
+; Used to display the state of random/repeat/repeatone/single
+; Only applies if <icon-[random|repeat|repeatone|single]> is used
+;toggle-on-foreground = #ff
+;toggle-off-foreground = #55
+
+; Only applies if <bar-progress> is used
+;bar-progress-width = 45
+;bar-progress-indicator = |
+;bar-progress-fill = ─
+;bar-progress-empty = ─
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+[module/temperature]
+type = internal/temperature
+
+; Seconds to sleep between updates
+;Default =1 
+interval = 1
+
+; Thermal zone to use
+; To list all the zone types, run
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+;;hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+;hwmon-path = /sys/devices/pci0000:00/0000:00:01.3/0000:01:00.0/hwmon/hwmon0/temp1_input
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
+
+; Whether or not to show units next to the temperature tokens (°C, °F)
+units = true
+
+; Available tags:
+;   <label> (default)
+;   <ramp>
+format = <ramp> <label>
+format-background = ${colors.deco}
+
+; Available tags:
+;   <label-warn> (default)
+;   <ramp>
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${colors.primary}
+
+; Available tokens:
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label = %temperature-c%
+
+; Available tokens:
+;   %temperature-c%   (default, temperature in °C)
+;   %temperature-f%   (temperature in °F)
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.alert}
+
+; Requires the <ramp> tag
+; The icon selection will range from 0 to `warn-temperature`
+; with the current temperature as index.
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+ramp-0-foreground = ${colors.primary}
+ramp-1-foreground = ${colors.primary}
+ramp-2-foreground = ${colors.primary}
+ramp-3-foreground = ${colors.primary}
+ramp-4-foreground = ${colors.primary}
+
+; vim:ft=dosini
