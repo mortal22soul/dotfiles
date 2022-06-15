@@ -37,8 +37,8 @@
 ## My Desktops :
 
   ### bspwm :
-  
   <img src="sample/bspwm-catppuccin.png" alt="">
+  I dont use Arch btw :)
   
   ### xfce :
   <img src="sample/spidey-xfce.png" alt="">
