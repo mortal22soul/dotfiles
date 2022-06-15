@@ -26,37 +26,38 @@ while :; do
 done &
 
 #/home/mehesares/.screenlayout/screenres.sh &
-nitrogen --restore &
-/home/mehesares/.config/polybar/launch.sh &
+#/home/mehesares/.config/polybar/launch.sh &
+feh --no-fehbg --bg-fill /home/mehesares/Pictures/catgradient1.png &
+polybar -r -c /home/mehesares/ctt-polybar/config &
 nm-applet &
 flameshot &
-killall -q redshift & && redshift &
 xfce4-clipman &
 xfce4-power-manager &
 picom --experimental-backends &
 dunst &
+notify-send "Welcome back $USER!"
 
 ###################################
 ########     Workspaces    ########
 ###################################
 
-bspc monitor LVDS-1 -d 1 2 3 4 5
+bspc monitor LVDS-1 -d 1 2 3 4 5 6 7 8
 
 #external_monitor=HDMI-1
 #if [[ $(xrandr -q | grep "$external_monitor connected") ]]; then
-#        bspc monitor HDMI-1 -d 1 2 3 4 5
+#        bspc monitor HDMI-1 -d 1 2 3 4 5 6
 #fi
 
 ###################################
 #####     Window Settings     #####
 ###################################
 
-bspc config border_radius               8
+bspc config border_radius               10
 bspc config border_width                2
 
-bspc config window_gap                  10
+bspc config window_gap                  8
 
-bspc config top_padding                 22
+bspc config top_padding                 36
 bspc config bottom_padding              0
 bspc config left_padding                0
 bspc config right_padding               0
@@ -66,9 +67,11 @@ bspc config right_monocle_padding       0
 bspc config left_monocle_padding        0
 bspc config bottom_monocle_padding      0
 
+#bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
+
 bspc config pointer_follows_monitor     true
 bspc config focus_follows_pointer       true
-#bspc config click_to_focus              true
+bspc config click_to_focus              false
 #bspc config focus_by_distance           true
 #bspc config history_aware_focus         true
 
@@ -95,19 +98,18 @@ bspc rule -r *:*
 
 # Use command "xprop | grep WM_CLASS" to find the name of the application to be entered below
 bspc rule -a Brave-browser      follow=on
-bspc rule -a Gimp               follow=on
 bspc rule -a Kupfer.py          focus=on
 bspc rule -a Screenkey          manage=off
 bspc rule -a Nitrogen           state=floating
 bspc rule -a Pavucontrol        state=floating
 bspc rule -a GParted            state=floating
+bspc rule -a Guake              state=floating
 
 ###################################
 #####      Border Colours     #####
 ###################################
 
-bspc config focused_border_color    "#6272A4"
+bspc config focused_border_color    "#ddb6f2"
 bspc config normal_border_color     "#6272A4"
 bspc config active_border_color     "#6272A4"
-bspc config presel_feedback_color   "#6272A4"
 bspc config urgent_border_color     "#dd2727"
