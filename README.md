@@ -35,13 +35,13 @@
      - Cheat Sheet - https://www.nerdfonts.com/cheat-sheet
 
 ## My Desktops :
-
-  ### bspwm :
-  <img src="sample/bspwm-catppuccin.png" alt="">
-  I dont use Arch btw :)
   
   ### xfce :
   <img src="sample/spidey-xfce.png" alt="">
+  
+  ### bspwm :
+  <img src="sample/bspwm-catppuccin.png" alt="">
+  I dont use Arch btw :)
   
   ### i3 :
   <img src="sample/desktop2.png" alt="">
