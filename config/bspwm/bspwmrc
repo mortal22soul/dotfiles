@@ -27,17 +27,17 @@ while :; do
 done &
 
 # Kill if already running
-killall -9 sxhkd dunst ksuperkey xfce4-power-manager
+killall -9 sxhkd dunst ksuperkey xfce4-power-manager tint2 flameshot picom
 
 #/home/mehesares/.screenlayout/screenres.sh &
 #/home/mehesares/.config/polybar/launch.sh &
 #feh --no-fehbg --bg-fill /home/mehesares/Pictures/catgradient1.png &
 nitrogen --restore &
 polybar -r -c /home/mehesares/bspwm-polybar/config.ini &
+tint2 &
 nm-applet &
 flameshot &
 xfce4-clipman &
-tint2 &
 xfce4-power-manager &
 picom --experimental-backends &
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
