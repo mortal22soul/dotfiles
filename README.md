@@ -37,7 +37,7 @@
 ## My Desktops :
   
   ### xfce :
-  <img src="sample/spidey-xfce.png" alt="">
+  <img src="sample/spidey-xfce4.png" alt="">
   
   ### bspwm :
   <img src="sample/bspwm-catppuccin.png" alt="">
