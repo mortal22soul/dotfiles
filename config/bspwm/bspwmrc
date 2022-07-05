@@ -16,6 +16,7 @@
 ###################################
 
 # Make sure sxhkd is always running
+
 while :; do
     if pgrep -x sxhkd > /dev/null; then
         true
@@ -25,28 +26,51 @@ while :; do
     sleep 5
 done &
 
+# Kill if already running
+killall -9 sxhkd dunst ksuperkey xfce4-power-manager
+
 #/home/mehesares/.screenlayout/screenres.sh &
 #/home/mehesares/.config/polybar/launch.sh &
-feh --no-fehbg --bg-fill /home/mehesares/Pictures/catgradient1.png &
-polybar -r -c /home/mehesares/ctt-polybar/config &
+#feh --no-fehbg --bg-fill /home/mehesares/Pictures/catgradient1.png &
+nitrogen --restore &
+polybar -r -c /home/mehesares/bspwm-polybar/config.ini &
 nm-applet &
 flameshot &
 xfce4-clipman &
+tint2 &
 xfce4-power-manager &
 picom --experimental-backends &
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 dunst &
-notify-send "Welcome back $USER!"
+notify-send "Welcome back Aryan!"
+
+#Use the mod key to launch rofi
+ksuperkey -e 'Super_L=Alt_L|F1'
+
+# Fix cursor
+xsetroot -cursor_name left_ptr
 
 ###################################
 ########     Workspaces    ########
 ###################################
 
-bspc monitor LVDS-1 -d 1 2 3 4 5 6 7 8
+#bspc monitor LVDS-1 -d 1 2 3 4 5 6 7 8
 
 #external_monitor=HDMI-1
+
 #if [[ $(xrandr -q | grep "$external_monitor connected") ]]; then
 #        bspc monitor HDMI-1 -d 1 2 3 4 5 6
 #fi
+
+workspaces() {
+	name=1
+	for monitor in `bspc query -M`; do
+		#bspc monitor ${monitor} -n "$name" -d 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII' 'VIII'
+		bspc monitor ${monitor} -n "$name" -d '' '' '' '' '' ''
+		let name++
+	done
+}
+workspaces
 
 ###################################
 #####     Window Settings     #####
@@ -67,8 +91,6 @@ bspc config right_monocle_padding       0
 bspc config left_monocle_padding        0
 bspc config bottom_monocle_padding      0
 
-#bspc config external_rules_command "$HOME/.config/bspwm/external_rules.sh"
-
 bspc config pointer_follows_monitor     true
 bspc config focus_follows_pointer       true
 bspc config click_to_focus              false
@@ -84,10 +106,10 @@ bspc config remove_disabled_monitors    true
 bspc config remove_unplugged_monitors   true
 bspc config merge_overlapping_monitors  true
 
-bspc config pointer_modifier mod4
-bspc config pointer_action1 move
-bspc config pointer_action2 resize_side
-bspc config pointer_action3 resize_corner
+bspc config pointer_modifier    mod4
+bspc config pointer_action1     move
+bspc config pointer_action2     resize_side
+bspc config pointer_action3     resize_corner
 
 ###################################
 #####    Application Rules    #####
@@ -104,6 +126,7 @@ bspc rule -a Nitrogen           state=floating
 bspc rule -a Pavucontrol        state=floating
 bspc rule -a GParted            state=floating
 bspc rule -a Guake              state=floating
+bspc rule -a Conky              state=floating      manage=off
 
 ###################################
 #####      Border Colours     #####
