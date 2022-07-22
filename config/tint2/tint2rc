@@ -6,8 +6,8 @@
 #-------------------------------------
 # Backgrounds
 # Background 1: Panel
-rounded = 10
-border_width = 0
+rounded = 12
+border_width = 2
 border_sides = LR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
@@ -73,8 +73,8 @@ border_color_pressed = #000000 100
 #-------------------------------------
 # Panel
 panel_items = S
-panel_size = 20 90
-panel_margin = 420 11
+panel_size = 21 100
+panel_margin = 348 11
 panel_padding = 2 4 0
 panel_background_id = 1
 wm_menu = 1
