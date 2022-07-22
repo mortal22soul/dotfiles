@@ -1,4 +1,18 @@
-## My dotfiles config.
+## Overview
+
+- **Operating System** : `Linux Mint`
+- **Window Manager** : `i3,bspwm`
+- **Status Bar** : `Polybar`
+- **Launcher** : `Rofi`
+- **Session Manager** : `lightdm,sddm`
+- **Notifications** : `Dunst`
+- **Terminal** : `xfce4-terminal`
+- **File Manager** : `Thunar`
+- **Text Editor** : `Visual Studio Code,xed,vim`
+- **Web Browser** : `Brave`
+- **Tray** : `Tint2`
+- **Lockscreen** : `betterlockscreen,i3lock-color`
+- **Music player** : `spotify,ncmpcpp`
 
 ### Configs included for :
 
@@ -7,7 +21,6 @@
   - [sxhkd](https://github.com/baskerville/sxhkd)
   - [rofi](https://github.com/davatorium/rofi)
   - [cava](https://github.com/karlstav/cava)
-  - [vis](https://github.com/dpayne/cli-visualizer)
   - [ranger](https://github.com/ranger/ranger)
   - [polybar](https://github.com/polybar/polybar)
   - [picom](https://github.com/pijulius/picom)
@@ -41,3 +54,8 @@
   
   ### i3 :
   <img src="sample/desktop2.png" alt="">
+
+#### References
+- [adi1090x](https://github.com/adi1090x), [archcraft](https://github.com/archcraft-os)
+- [elenapan](https://github.com/elenapan/dotfiles)
+- [Syndrizzle](https://github.com/Syndrizzle/hotfiles)
