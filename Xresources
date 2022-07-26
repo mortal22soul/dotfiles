@@ -1,16 +1,13 @@
 Xft.dpi: 96
-URxvt.geometry: 90x30
-URxvt.font: xft:Ubuntu Mono:size=14
-URxvt.boldFont: xft:Ubuntu Mono:size=14
-URxvt.scrollBar: false
-URxvt.title: URxvt
-URxvt.cursorBlink: True
-URxvt.cursorUnderline: False
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: true
+Xft.hintstyle: hintslight
 
 ! special
 *.background:   #282A36
 *.foreground:   #ffffff
-*.cursorColor:  #f8f8f2
 
 ! black
 *.color0:       #21222c
