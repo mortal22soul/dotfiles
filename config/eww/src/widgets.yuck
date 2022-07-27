@@ -3,7 +3,7 @@
   (box :class boxClass
   (circular-progress :class class 
     :value value 
-    :thickness 8
+    :thickness 6
     text 
    )
   )

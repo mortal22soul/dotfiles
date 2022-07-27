@@ -1,27 +1,27 @@
 .fetchContent {
-  padding: 2rem 0;
-  font-family: 'JetBrainsMono Nerd Font';
-  color: $white;
-  border-right: 2px solid $grey;
+  padding: 25px 0;
+  font-family: "JetBrainsMono Nerd Font";
+  color: $yellow;
+  border-right: 5px solid $grey;
 }
 
 .logo {
-  font-family: 'JetBrainsMono Nerd Font';
+  font-family: "JetBrainsMono Nerd Font";
   font-size: 4rem;
-  color: $green;
-  margin:0  1.5rem
+  color: $blue;
+  margin: 0 1.5rem;
 }
 
 .fetch {
   background-color: $blackAlt;
   border-radius: 1rem;
   margin-bottom: 1rem;
-  margin-top: .6rem;
+  margin-top: 0.6rem;
 }
 
 .fetchTitles {
   color: $green;
-  padding-right: 1rem
+  padding-right: 10px;
 }
 
 .hdd {

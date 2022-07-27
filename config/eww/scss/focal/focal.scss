@@ -15,11 +15,13 @@
 }
 
 .CPU {
-  font-size: 2.5rem;
+  color: $blue;
+  font-size: 35px;
 }
 
 .RAM {
   color: $green;
+  font-size: 25px;
 }
 
 .battery {
@@ -34,13 +36,14 @@
 
 .time {
   font-family: "Iosevka";
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 15px;
   background-color: $blackAlt;
   margin: 2.5rem 0.5rem;
-  margin-bottom: -0.6rem;
+  margin-bottom: -0.5rem;
   border-radius: 1rem;
-  padding: 0 1rem;
-  color: $white;
+  padding: 10px;
+  color: $yellow;
 }
 
 .mute {

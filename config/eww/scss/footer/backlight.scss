@@ -3,12 +3,12 @@
 }
 
 .brightness {
-  padding: 0 1rem;
-  margin-bottom: -2rem;
+  padding: 0 10px;
+  margin-bottom: -35px;
 }
 
 .brightness scale trough highlight {
-  background-color: $red; 
+  background-color: $red;
   border-radius: 10px;
 }
 
@@ -16,5 +16,5 @@
   background-color: $grey;
   border-radius: 1rem;
   min-width: 16rem;
-  min-height: .3rem;
+  min-height: 0.3rem;
 }
