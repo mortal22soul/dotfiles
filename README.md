@@ -26,14 +26,12 @@
 
 <img src="sample/bspwm-catppuccin.png" alt="">
 
-#### I dont use Arch btw :)
-
 ## Overview
 
 </div>
 
 - **Operating System** : [**`Linux Mint`**](https://linuxmint.com/)
-- **Window Manager** : [**`i3-gaps`**](https://github.com/Airblader/i3) [**`bspwm`**](https://github.com/baskerville/bspwm)
+- **Window Manager** : [**`i3`**](https://i3wm.org/) [**`bspwm`**](https://github.com/baskerville/bspwm)
 - **Status Bar** : [**`Polybar`**](https://github.com/polybar/polybar)
 - **Launcher** : [**`Rofi`**](https://github.com/davatorium/rofi)
 - **Notifications** : [**`Dunst`**](https://github.com/dunst-project/dunst)
@@ -63,6 +61,11 @@
 
 </div>
 
+### bspwm :
+
+<img src="sample/bspwm1.png" alt="">
+<img src="sample/bspwm2.png" alt="">
+
 ### dwm :
 
 <img src="https://raw.githubusercontent.com/Mortal22Soul/suckless-tools/main/assets/chadwm_eww.jpg" alt="">
@@ -70,10 +73,15 @@
 
 #### NOTE : dwm configs [here](https://github.com/Mortal22Soul/suckless-tools)
 
-### i3-gaps :
+### i3 :
 
   <img src="sample/desktop2.png" alt="">
   <img src="sample/desktop1.png" alt="">
+  
+### xfce :
+
+<img src="sample/spidey-xfce4.png" alt="">
+<img src="sample/Dracula_xfce2.png" alt="">
 
 #### References
 
@@ -89,5 +97,5 @@
 </div>
 
 <p align="center">
-   <img src="https://github.com/Mortal22Soul/Mortal22Soul/assets/gray0_ctp_on_line.png">
+   <img src="https://raw.githubusercontent.com/Mortal22Soul/Mortal22Soul/main/assets/gray0_ctp_on_line.png">
 </p>
