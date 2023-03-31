@@ -80,6 +80,7 @@
 - [Archcraft](https://github.com/archcraft-os)
 - [adi1090x](https://github.com/adi1090x)
 - [Syndrizzle](https://github.com/Syndrizzle)
+- [rxyhn](https://github.com/rxyhn)
 
 <div align='center'>
 
@@ -88,5 +89,5 @@
 </div>
 
 <p align="center">
-   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/footers/gray0_ctp_on_line.svg?sanitize=true"/>
+   <img src="https://github.com/Mortal22Soul/Mortal22Soul/assets/gray0_ctp_on_line.png">
 </p>
